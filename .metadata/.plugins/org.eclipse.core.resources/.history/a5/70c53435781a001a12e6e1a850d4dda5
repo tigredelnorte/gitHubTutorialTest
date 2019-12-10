@@ -1,0 +1,29 @@
+package test;
+
+class Runner implements Runnable{
+
+	@Override
+	public void run() {
+		double start = System.currentTimeMillis();
+		System.out.println("test started");
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		double end = System.currentTimeMillis();
+		System.out.println("test finished");
+		System.out.println("Test duration: "+(end-start));
+	}
+	
+}
+
+public class AppTest {
+	public static void main(String[] args) {
+
+		Thread t1 = new Thread(new Runner());
+		t1.start();
+	}
+}

@@ -1,0 +1,21 @@
+package test;
+
+class Processor extends Thread{
+	public void run() {
+		while(true) {
+			System.out.println("KURWA");
+			
+			try {
+				Thread.sleep(150);
+			} catch (InterruptedException e) {
+			}
+		}
+	}
+}
+
+public class AppTest {
+	public static void main(String[] args) {
+
+
+	}
+}

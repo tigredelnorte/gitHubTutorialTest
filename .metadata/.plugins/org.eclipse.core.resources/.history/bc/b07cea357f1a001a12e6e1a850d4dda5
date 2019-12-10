@@ -1,0 +1,32 @@
+package test;
+
+import java.util.Scanner;
+
+class Processor extends Thread{
+	private boolean working = true;
+	public void run() {
+		while(working) {
+			System.out.println("KURWA");
+			
+			try {
+				Thread.sleep(150); 
+			} catch (InterruptedException e) {
+			}
+		}
+	}
+	public void shutdown() {
+		working=false;
+	}
+}
+public class AppTest {
+	public static void main(String[] args) { 
+		System.out.println("Hit space to terminate the process");
+		Processor p1 = new Processor();
+		p1.start();
+		
+		Scanner scanner = new Scanner(System.in);
+
+		scanner.nextLine();
+		p1.shutdown();
+	}
+}

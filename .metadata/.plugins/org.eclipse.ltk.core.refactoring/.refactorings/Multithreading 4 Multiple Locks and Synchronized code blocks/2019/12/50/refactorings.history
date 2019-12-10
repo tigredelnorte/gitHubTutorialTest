@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;t1&apos; in &apos;App.main()&apos; to &apos;t2&apos;&#x0D;&#x0A;- Original project: &apos;Multithreading 4 Multiple Locks and Synchronized code blocks&apos;&#x0D;&#x0A;- Original element: &apos;App.main().t1&apos;&#x0D;&#x0A;- Renamed element: &apos;t1&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;t1&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{App.java[App~main@t1!1229!1601!1236!1237!QThread;!0!false" name="t2" references="true" stamp="1575903866856" version="1.0"/>
+</session>

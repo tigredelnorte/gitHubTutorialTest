@@ -1,0 +1,35 @@
+package demo1;
+
+public class Leet7 {
+	public static void main(String[] args) {
+		System.out.println(romanToInt("XI"));
+	}
+
+	public static int romanToInt(String s) {
+    	char[]roman = s.toCharArray();
+    	int number = 0;
+    	int len = s.length();
+    	
+    	for(int i=0; i<len; i++) {
+    		
+  
+    	switch(roman[i])){
+    		case 'I':
+    			break;
+    		case 'V':
+    			break;
+    		case'X':
+    			break;
+    		case'L':
+    			break;
+    		case'C':
+    			break;
+    		case'D':
+    			break;
+    		case'M':
+    			break;
+    		}
+    	}
+    	return 1;
+	}
+}

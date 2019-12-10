@@ -1,0 +1,21 @@
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		Queue<String> q1 = new ArrayBlockingQueue<String>(3);
+
+		q1.add("One");
+		q1.add("Two");
+		q1.add("Three");
+		try {
+			q1.add("Four");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

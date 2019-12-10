@@ -1,0 +1,24 @@
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		List<String>linkedList = new LinkedList();
+		linkedList.add("giraffe");
+		linkedList.add("bear");
+		linkedList.add("ant");
+		linkedList.add("crocodile");
+		linkedList.add("worm");
+		
+		Collections.sort(linkedList);
+		
+		for(String animal: linkedList) {
+			System.out.println(animal);
+		}
+		
+	}
+
+}

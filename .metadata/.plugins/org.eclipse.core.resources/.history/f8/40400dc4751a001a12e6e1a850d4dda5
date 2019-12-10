@@ -1,0 +1,93 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Auto implements Comparable<Auto>{
+	Integer id;
+	String name;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Auto(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Auto other = (Auto) obj;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+	@Override
+	public int compareTo(Auto a1) {
+		
+		return id.compareTo(a1.id);
+	}
+	
+	
+	
+}
+class Runner implements Runnable{
+
+	@Override
+	public void run() {
+		ArrayList<Auto>ar1 = new ArrayList();
+			ar1.add(new Auto(1, "Audi"));
+			ar1.add(new Auto(2, "BMW"));
+			ar1.add(new Auto(3, "Mercedes"));
+			ar1.add(new Auto(4, "Ferrari"));
+			ar1.add(new Auto(5, "Lamborgini"));
+			ar1.add(new Auto(6, "Tesla"));
+			Collections.sort(ar1);
+			System.out.println(ar1);
+			try {
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+}
+
+public class AppTest {
+	public static void main(String[] args) {
+		Thread r1 = new Thread(new Runner());
+		r1.start();
+		Thread r2 = new Thread(new Runner());
+		r2.start();
+	}
+}

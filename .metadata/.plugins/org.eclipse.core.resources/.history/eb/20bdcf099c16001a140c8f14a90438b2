@@ -1,0 +1,21 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class App {
+	public static void main(String[] args) {
+		
+		Set<String>set1 = new HashSet();
+		
+		set1.add("dog");
+		set1.add("cat");
+		set1.add("cow");
+		set1.add("bee");
+		set1.add("ant");
+		set1.add("elefant");
+		set1.add("stonoga");
+		
+		System.out.println(set1);
+		
+		set1.add("stonoga);
+	}
+}

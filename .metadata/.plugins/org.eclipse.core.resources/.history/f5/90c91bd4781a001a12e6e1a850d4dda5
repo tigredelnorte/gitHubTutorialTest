@@ -1,0 +1,45 @@
+package test;
+
+class Runner implements Runnable{
+
+	int delay=1000;
+	
+	
+	public Runner(int delay) {
+		super();
+		this.delay = delay;
+	}
+
+
+	public Runner() {
+		super();
+	}
+
+
+	@Override
+	public void run() {
+		double start = System.currentTimeMillis();
+		System.out.println("test started");
+		
+		try {
+			Thread.sleep(delay);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		double end = System.currentTimeMillis();
+		System.out.println("test finished");
+		System.out.println("Test duration: "+(end-start));
+	}
+	
+}
+
+public class AppTest {
+	public static void main(String[] args) {
+
+		Thread t1 = new Thread(new Runner());
+		t1.start();
+		Thread t2 = new Thread(new Runner(1500));
+		t2.start();
+	}
+}

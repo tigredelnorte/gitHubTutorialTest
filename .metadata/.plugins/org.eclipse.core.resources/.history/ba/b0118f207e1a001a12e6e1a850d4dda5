@@ -1,0 +1,18 @@
+package test;
+
+class Runner extends Thread{
+
+	public void run() {
+		System.out.println("test");
+	}
+}
+
+public class AppTest {
+	public static void main(String[] args) {
+
+		Runner r1 = new Runner();
+		r1.start();
+		Runner r2 = new Runner();
+		r2.start();
+	}
+}

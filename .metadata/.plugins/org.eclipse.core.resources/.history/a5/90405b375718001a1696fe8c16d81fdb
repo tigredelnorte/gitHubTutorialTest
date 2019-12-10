@@ -1,0 +1,33 @@
+package demo1;
+
+public class Leet14 {
+	public static void main(String[] args) {
+		String[] stringArray = {"dog","racecar","car"};
+		System.out.println(longestCommonPrefix(stringArray));
+	}
+
+	public static String longestCommonPrefix(String[] strs) {
+		int len = strs.length;
+		int lenMini = strs[0].length();
+		StringBuilder sb = new StringBuilder();
+		for(String str: strs) {
+			if(str.length()<lenMini)
+				lenMini = str.length();
+		}
+		System.out.println(lenMini);
+		
+		for(int i=0; i<lenMini; i++) {
+			char temp = strs[0].charAt(i);
+			Boolean toPrefix=false;
+			for(int j=1; j<len; j++) {
+				toPrefix= strs[j].charAt(i)==(temp)? true: false;
+			}
+			if(toPrefix ==true) {
+				sb.append(temp);
+				System.out.println(sb);
+			}
+		}
+		
+		return sb!=null? sb.toString(): "";
+	}
+}

@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		Set<String>animals = new HashSet();
+		animals.add("giraffe");
+		animals.add("bear");
+		animals.add("ant");
+		animals.add("crocodile");
+		animals.add("worm");
+		
+		for(String animal: animals) {
+			System.out.println(animal);
+		}
+		System.out.println("====================================");
+		Collections.sort(animals);
+		
+		for(String animal: animals) {
+			System.out.println(animal);
+		}
+		
+	}
+
+}

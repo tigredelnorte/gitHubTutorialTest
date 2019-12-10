@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class App {
+	
+	Random random = new Random();
+	
+	public List <Integer>list1 = new ArrayList();
+	public List <Integer>list2 = new ArrayList();
+	
+	
+	public void stageOne() {
+		try {
+			Thread.sleep(1);
+		} catch (InterruptedException e) {
+		}
+		list1.add(random.nextInt(100));
+	}
+	
+	public void stageTwo() {
+		try {
+			Thread.sleep(1);
+		} catch (InterruptedException e) {
+		}
+		list2.add(random.nextInt(100));
+	}
+	
+	public void process() {
+		for(int i=0; i<1000; i++) {
+			stageOne();
+			stageTwo();
+		}
+	}
+	
+	
+	public void main() {
+
+		System.out.println("Starting...");
+		
+		Thread t1 = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				
+				long start = System.currentTimeMillis();
+				
+				process();
+				
+				long end = System.currentTimeMillis();
+				
+				System.out.println("Time taken for calculation: "+ (end-start));
+				System.out.println("List 1: "+ list1.size()+" List 2: "+list2.size());
+			}
+			
+		});
+		t1.start();
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		Thread t2 = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				
+				long start = System.currentTimeMillis();
+				
+				process();
+				
+				long end = System.currentTimeMillis();
+				
+				System.out.println("Time taken for calculation: "+ (end-start));
+				System.out.println("List 1: "+ list1.size()+" List 2: "+list2.size());
+			}
+			
+		});
+		t2.start();
+		try {
+			t2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

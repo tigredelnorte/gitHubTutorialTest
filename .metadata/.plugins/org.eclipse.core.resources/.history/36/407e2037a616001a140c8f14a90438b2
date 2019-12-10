@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		List<String>animals = new ArrayList();
+		animals.add("giraffe");
+		animals.add("bear");
+		animals.add("ant");
+		animals.add("crocodile");
+		animals.add("worm");
+		
+		for(String animal: animals) {
+			System.out.println(animal);
+		}
+		System.out.println("====================================");
+		Collections.sort(animals);
+		
+		for(String animal: animals) {
+			System.out.println(animal);
+		}
+		
+	}
+
+}
